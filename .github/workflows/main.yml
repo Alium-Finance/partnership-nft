@@ -1,18 +1,16 @@
-name: Manual run
+name: CI/CD
 
 on: [workflow_dispatch]
 
 jobs:
   build:
-
     runs-on: ubuntu-18.04
-
     steps:
       - uses: actions/checkout@v2.1.1
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 14
           registry-url: https://npm.pkg.github.com/
       - name: Cache dependencies
         uses: actions/cache@v1
