@@ -40,7 +40,7 @@ jobs:
       #    target: "/var/www/alium-partnership-nft/build"
       #    strip_components: 1
   deploy:
-    runs-on: [self-hosted, linux, x64, dev]
+    runs-on: [self-hosted, dev]
     steps:
       - uses: actions/download-artifact@v2
         with:
