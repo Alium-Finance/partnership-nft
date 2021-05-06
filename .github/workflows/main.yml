@@ -29,16 +29,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build
-          path: ./       
-      #- name: SFTP Deployment
-      #  uses: appleboy/scp-action@master
-      #  with:
-      #    host: ${{secrets.SFTP_PROD_SERVER}}
-      #    username: ${{secrets.SFTP_USER}}
-      #    key: ${{secrets.SFTP_PROD_KEY}}
-      #    source: "build/*"
-      #    target: "/var/www/alium-partnership-nft/build"
-      #    strip_components: 1
+          path: build
+
   deploy:
     needs: build
     runs-on: [self-hosted, dev]
@@ -47,5 +39,3 @@ jobs:
         with:
           name: deploy
       - run: cp -r build/ ~/test
-    
-   
