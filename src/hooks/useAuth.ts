@@ -3,13 +3,13 @@ import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 import { NoBscProviderError } from '@binance-chain/bsc-connector'
 import {
   NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected,
+  UserRejectedRequestError as UserRejectedRequestErrorInjected
 } from '@web3-react/injected-connector'
 import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-  WalletConnectConnector,
+  WalletConnectConnector
 } from '@web3-react/walletconnect-connector'
-import { ConnectorNames, connectorLocalStorageKey } from '@alium-official/uikit'
+import { ConnectorNames, connectorLocalStorageKey, removeConnectorId } from '@alium-official/uikit'
 import { connectorsByName } from '../utils/web3React'
 import { setupNetwork } from '../utils/wallet'
 
@@ -26,7 +26,7 @@ const useAuth = () => {
             activate(connector)
           }
         } else {
-          window.localStorage.removeItem(connectorLocalStorageKey)
+          removeConnectorId()
           if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
             console.error('Provider Error', 'No provider was found')
           } else if (
@@ -44,7 +44,7 @@ const useAuth = () => {
         }
       })
     } else {
-      console.error("Can't find connector", 'The connector config is wrong')
+      console.error('Can\'t find connector', 'The connector config is wrong')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
