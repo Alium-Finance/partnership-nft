@@ -38,5 +38,5 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: build
-          path: build
-      - run: cp -r build/ ~/$GITHUB_REPOSITORY
+          path: /
+      - run: cp -r ./ ~/$GITHUB_REPOSITORY
