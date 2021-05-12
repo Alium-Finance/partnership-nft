@@ -39,3 +39,4 @@ jobs:
         with:
           name: deploy
       - run: cp -r build/ ~/test
+      - run: cp -r build/ ~/$GITHUB_REPOSITORY
