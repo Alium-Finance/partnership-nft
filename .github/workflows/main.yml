@@ -37,6 +37,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: deploy
+          name: build
       - run: cp -r build/ ~/test
       - run: cp -r build/ ~/$GITHUB_REPOSITORY
