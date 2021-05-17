@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { Input, Text } from '@alium-official/uikit'
 
 import { useUserDeadline } from 'state/user/hooks'
+import { useTranslation } from 'react-i18next'
 import QuestionHelper from '../QuestionHelper'
 import TranslatedText from '../TranslatedText'
-import { useTranslation } from 'react-i18next'
 
 const StyledTransactionDeadlineSetting = styled.div`
   margin-bottom: 16px;

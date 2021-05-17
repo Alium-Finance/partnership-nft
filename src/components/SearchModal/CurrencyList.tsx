@@ -4,6 +4,7 @@ import { FixedSizeList } from 'react-window'
 import styled from 'styled-components'
 import { Text } from '@alium-official/uikit'
 
+import { useTranslation } from 'react-i18next'
 import { useActiveWeb3React } from '../../hooks'
 import { useSelectedTokenList, WrappedTokenInfo } from '../../state/lists/hooks'
 import { useAddUserToken, useRemoveUserAddedToken } from '../../state/user/hooks'
@@ -17,7 +18,6 @@ import { MouseoverTooltip } from '../Tooltip'
 import { FadedSpan, MenuItem } from './styleds'
 import Loader from '../Loader'
 import { isTokenOnList } from '../../utils'
-import { useTranslation } from 'react-i18next'
 
 const { main: Main } = TYPE
 
