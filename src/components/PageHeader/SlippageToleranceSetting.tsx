@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { Button, Flex, Input, Text } from '@alium-official/uikit'
 
 import { useUserSlippageTolerance } from 'state/user/hooks'
+import { useTranslation } from 'react-i18next'
 import QuestionHelper from '../QuestionHelper'
 import TranslatedText from '../TranslatedText'
-import { useTranslation } from 'react-i18next'
 
 const MAX_SLIPPAGE = 5000
 const RISKY_SLIPPAGE_LOW = 50
@@ -73,7 +73,7 @@ const SlippageToleranceSettings = () => {
     } catch {
       setError(t('errors.enterValidPercentage'))
     }
-  }, [value, setError, setUserslippageTolerance])
+  }, [value, setError, setUserslippageTolerance, t])
 
   // Notify user if slippage is risky
   useEffect(() => {

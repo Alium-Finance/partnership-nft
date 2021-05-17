@@ -9,7 +9,7 @@ import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector
 } from '@web3-react/walletconnect-connector'
-import { ConnectorNames, connectorLocalStorageKey, removeConnectorId } from '@alium-official/uikit'
+import { ConnectorNames, removeConnectorId } from '@alium-official/uikit'
 import { connectorsByName } from '../utils/web3React'
 import { setupNetwork } from '../utils/wallet'
 

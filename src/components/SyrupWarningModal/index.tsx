@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { Button, Text } from '@alium-official/uikit'
 
 import { AlertTriangle } from 'react-feather'
+import { useTranslation } from 'react-i18next'
 import { TYPE } from '../Shared'
 import Modal from '../Modal'
 import { AutoRow, RowBetween } from '../Row'
 import { AutoColumn } from '../Column'
-import { useTranslation } from 'react-i18next'
 
 const { main: Main, body: Body } = TYPE
 
