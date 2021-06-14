@@ -39,22 +39,22 @@ jobs:
           name: build
           path: build
 
-  #deploy_dev:
-  #  needs: build
-  #  if: github.ref == 'refs/heads/develop'
-  #  runs-on: [self-hosted, dev]
-  #  steps:
-  #    - uses: actions/download-artifact@v2
-  #      with:
-  #        name: build
-  #    - run: cp -r ./ ~/$GITHUB_REPOSITORY
-
-  deploy_stage:
+  deploy_dev:
     needs: build
-    if: github.ref == 'refs/heads/master'
-    runs-on: [self-hosted, stage]
+    if: github.ref == 'refs/heads/develop'
+    runs-on: [self-hosted, dev]
     steps:
       - uses: actions/download-artifact@v2
         with:
           name: build
       - run: cp -r ./ ~/$GITHUB_REPOSITORY
+
+  #deploy_stage:
+  #  needs: build
+  #  if: github.ref == 'refs/heads/master'
+  #  runs-on: [self-hosted, stage]
+  #  steps:
+  #    - uses: actions/download-artifact@v2
+  #      with:
+  #        name: build
+  #    - run: cp -r ./ ~/$GITHUB_REPOSITORY
